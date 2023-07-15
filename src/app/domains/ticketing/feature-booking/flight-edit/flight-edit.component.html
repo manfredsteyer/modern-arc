@@ -1,0 +1,24 @@
+<div *ngIf="flight.id !== 0">
+  <h2>Flight Edit</h2>
+
+  <div class="mt-10">ShowDetails: {{ showDetails }}</div>
+
+  <form #form="ngForm" roundTrip>
+    <div>
+      <input name="id" [(ngModel)]="flight.id" />
+      <input name="from" [(ngModel)]="flight.from" />
+      <input name="to" [(ngModel)]="flight.to" />
+      <input name="date" [(ngModel)]="flight.date" appDateCva />
+    </div>
+
+    <div>
+      <input
+        name="delayed"
+        id="delayed"
+        [(ngModel)]="flight.delayed"
+        type="checkbox"
+      />
+      <label for="delayed">Delayed</label>
+    </div>
+  </form>
+</div>

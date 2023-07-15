@@ -1,0 +1,22 @@
+<div class="wrapper">
+  <div class="sidebar" data-color="white" data-active-color="danger">
+    <app-sidebar-cmp></app-sidebar-cmp>
+  </div>
+
+  <div class="main-panel">
+    <app-navbar-cmp></app-navbar-cmp>
+
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
+
+    <router-outlet name="aux"></router-outlet>
+  </div>
+</div>
+
+<div *ngIf="loading$ | async" class="loading-indicator">
+  <div class="spinner">
+    <div class="double-bounce1"></div>
+    <div class="double-bounce2"></div>
+  </div>
+</div>

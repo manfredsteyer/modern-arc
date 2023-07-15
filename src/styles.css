@@ -1,0 +1,38 @@
+input.ng-dirty.ng-invalid {
+  border-left: darkred 5px solid;
+}
+
+input.ng-dirty.ng-valid {
+  border-left: darkgreen 5px solid;
+}
+
+.selected {
+  background-color: moccasin;
+}
+
+a {
+  cursor: pointer;
+}
+
+.status {
+  text-decoration: underline;
+  color: navy;
+}
+
+.status:hover {
+  text-decoration: underline;
+  color: darkgoldenrod;
+}
+
+.p40 {
+  padding: 20px;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

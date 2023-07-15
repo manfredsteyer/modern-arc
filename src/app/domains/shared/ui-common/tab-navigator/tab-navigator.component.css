@@ -1,0 +1,13 @@
+.tab-navigator {
+  border: 2px solid black;
+  width: 150px;
+}
+
+.tab-navigator button {
+  border: none;
+  background-color: inherit;
+}
+
+.tab-navigator .next {
+  float: right;
+}

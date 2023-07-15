@@ -1,0 +1,35 @@
+<div [ngClass]="{ selected: selected }" class="card">
+  <div class="card-header">
+    <h2 class="title">
+      {{ item.from | city : "short" }} - {{ item.to | city : "long" }}
+    </h2>
+  </div>
+
+  <div class="card-body">
+    <p>Flight-No.: #{{ item.id }}</p>
+    <p>Date: {{ item.date | date : "dd.MM.yyyy HH:mm" }}</p>
+
+    <ng-content select=".middle"></ng-content>
+
+    <p>
+      Delayed:
+      <app-status-toggle [(status)]="item.delayed"> </app-status-toggle>
+    </p>
+    <p>
+      <button (click)="select()" *ngIf="!selected" class="btn btn-default">
+        Select
+      </button>
+      <button (click)="deselect()" *ngIf="selected" class="btn btn-default">
+        Remove
+      </button>
+
+      <button
+        [routerLink]="['../flight-edit', item.id, { showDetails: false }]"
+        class="btn btn-default"
+      >
+        Edit
+      </button>
+    </p>
+    <ng-content select=".bottom"></ng-content>
+  </div>
+</div>

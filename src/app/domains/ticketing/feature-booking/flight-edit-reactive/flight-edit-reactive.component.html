@@ -1,0 +1,30 @@
+<div class="p40">
+  <h2>Flight Edit (Reactive)</h2>
+
+  <app-validation-errors
+    [errors]="form.controls['from'].errors ?? {}"
+    field="from"
+  ></app-validation-errors>
+
+  <app-validation-errors
+    [errors]="form.errors ?? {}"
+    field="flight"
+  ></app-validation-errors>
+
+  <div class="alert alert-info" *ngIf="form?.controls?.['from']?.pending">
+    Validating ...
+  </div>
+
+  <form [formGroup]="form">
+    <input formControlName="id" />
+    <input formControlName="from" />
+    <input formControlName="to" />
+    <input formControlName="date" />
+    <input formControlName="delayed" type="checkbox" />
+  </form>
+
+  <div>
+    <button (click)="save()" class="btn btn-default">Save</button>
+    <button (click)="close()" class="btn btn-secondary">Close</button>
+  </div>
+</div>

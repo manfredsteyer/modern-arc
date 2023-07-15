@@ -1,0 +1,25 @@
+<div class="gray-bg"></div>
+
+<div class="flight-history">
+  <div class="flight-history-inside card">
+    <div class="card-body">
+      <h2>Your Basket</h2>
+
+      <ul class="list-group">
+        <li class="list-group-item">
+          <p>Hamburg - Graz</p>
+        </li>
+        <li class="list-group-item">
+          <p>Graz - Hamburg</p>
+        </li>
+      </ul>
+
+      <a
+        [routerLink]="['/', { outlets: { aux: null } }]"
+        class="btn btn-default"
+      >
+        Close
+      </a>
+    </div>
+  </div>
+</div>

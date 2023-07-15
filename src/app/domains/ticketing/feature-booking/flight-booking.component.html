@@ -1,0 +1,17 @@
+<div class="card">
+  <div class="card-body">
+    <ul class="nav nav-secondary">
+      <li routerLinkActive="active">
+        <a [routerLink]="['./flight-search']">Flight</a>
+      </li>
+
+      &nbsp; | &nbsp;
+
+      <li routerLinkActive="active">
+        <a [routerLink]="['./passenger-search']">Passenger</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

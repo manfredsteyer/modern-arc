@@ -1,0 +1,25 @@
+<div *ngIf="errors['required']" class="alert alert-danger">
+  The field '{{ field }}' is required!
+</div>
+
+<div *ngIf="errors['minlength']" class="alert alert-danger">
+  The field '{{ field }}' needs to have at least
+  {{ errors["minlength"]["requiredLength"] }}
+  characters.
+</div>
+
+<div *ngIf="errors['city']" class="alert alert-danger">
+  The field '{{ field }}' is not a valid city.
+</div>
+
+<div *ngIf="errors['asyncCity']" class="alert alert-danger">
+  The field '{{ field }}' is not a valid (async) city.
+</div>
+
+<div *ngIf="errors['roundTrip']" class="alert alert-danger">
+  Round Trips arn't allowed.
+</div>
+
+<div *ngIf="hasErrors" class="alert alert-danger">
+  Internal error object: {{ errors | json }}
+</div>

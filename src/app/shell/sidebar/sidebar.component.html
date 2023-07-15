@@ -1,0 +1,66 @@
+<div class="sidebar-wrapper">
+  <div class="logo">
+    <a href="http://angulararchitects.io" class="simple-text logo-mini">
+      <div class="logo-image-small">
+        <img src="assets/paper-design/angular2-logo.png" />
+      </div>
+    </a>
+    <a href="http://angulararchitects.io" class="simple-text logo-normal">
+      Flights 42
+    </a>
+  </div>
+  <ul class="nav">
+    <li class="active">
+      <a routerLink="home">
+        <p>Home</p>
+      </a>
+    </li>
+
+    <li>
+      <a routerLink="flight-booking">
+        <p>Flights</p>
+      </a>
+    </li>
+
+    <li>
+      <a routerLink="next-flights">
+        <p>Next Flights</p>
+      </a>
+    </li>
+
+    <hr />
+
+    <li>
+      <a routerLink="luggage/checkin">
+        <p>Checkin Luggage</p>
+      </a>
+    </li>
+
+    <hr />
+
+    <!-- Feel free to activate MF again -->
+    <!-- <li>
+      <a routerLink="miles/miles-list">
+        <p>Miles</p>
+      </a>
+    </li>
+
+    <li>
+      <a routerLink="miles/next-level">
+        <p>Next Level</p>
+      </a>
+    </li> -->
+
+    <li>
+      <a routerLink="about">
+        <p>About</p>
+      </a>
+    </li>
+
+    <li>
+      <a [routerLink]="[{ outlets: { aux: 'basket' } }]">
+        <p>Basket</p>
+      </a>
+    </li>
+  </ul>
+</div>
