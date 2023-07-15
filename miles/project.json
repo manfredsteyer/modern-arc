@@ -1,0 +1,102 @@
+{
+  "name": "miles",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "generators": {
+    "@schematics/angular:component": {
+      "standalone": true
+    },
+    "@schematics/angular:directive": {
+      "standalone": true
+    },
+    "@schematics/angular:pipe": {
+      "standalone": true
+    }
+  },
+  "sourceRoot": "miles/src",
+  "prefix": "app",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "options": {
+        "outputPath": "dist/miles",
+        "index": "miles/src/index.html",
+        "main": "miles/src/main.ts",
+        "polyfills": [
+          "zone.js"
+        ],
+        "tsConfig": "miles/tsconfig.app.json",
+        "assets": [
+          "miles/src/favicon.ico",
+          "miles/src/assets"
+        ],
+        "styles": [
+          "miles/src/styles.css"
+        ],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "miles:build:production"
+        },
+        "development": {
+          "browserTarget": "miles:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "miles:build"
+      }
+    },
+    "test": {
+      "executor": "@angular-devkit/build-angular:karma",
+      "options": {
+        "polyfills": [
+          "zone.js",
+          "zone.js/testing"
+        ],
+        "tsConfig": "miles/tsconfig.spec.json",
+        "assets": [
+          "miles/src/favicon.ico",
+          "miles/src/assets"
+        ],
+        "styles": [
+          "miles/src/styles.css"
+        ],
+        "scripts": []
+      }
+    }
+  }
+}

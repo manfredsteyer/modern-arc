@@ -12,6 +12,7 @@ import { filter, map, merge, Observable } from 'rxjs';
 import { SidebarComponent } from './shell/sidebar/sidebar.component';
 import { NavbarComponent } from './shell/navbar/navbar.component';
 import { ConfigService } from '@demo/shared/util-config';
+import { AuthService } from '@demo/auth';
 
 @Component({
   standalone: true,
@@ -25,8 +26,12 @@ export class AppComponent {
   configService = inject(ConfigService);
   router = inject(Router);
   loading$: Observable<boolean>;
+  auth = inject(AuthService);
 
   constructor() {
+
+    this.auth.userName = 'John Doe';
+    
     this.configService.loadConfig();
 
     const stop$ = this.router.events.pipe(

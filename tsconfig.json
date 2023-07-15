@@ -20,7 +20,13 @@
     "useDefineForClassFields": false,
     "lib": ["ES2022", "dom"],
     "paths": {
-      "@demo/*": ["src/app/domains/*"],
+      "@demo/auth": [
+        "auth/src/public-api.ts"
+      ],
+      "@demo/*": [
+        "src/app/domains/*"
+      ],
+
     }
   },
   "angularCompilerOptions": {
