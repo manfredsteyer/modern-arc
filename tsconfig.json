@@ -18,15 +18,17 @@
     "target": "ES2022",
     "module": "ES2022",
     "useDefineForClassFields": false,
-    "lib": ["ES2022", "dom"],
+    "lib": [
+      "ES2022",
+      "dom"
+    ],
     "paths": {
-      "@demo/auth": [
-        "auth/src/public-api.ts"
-      ],
       "@demo/*": [
         "src/app/domains/*"
       ],
-
+      "@demo/auth": [
+        "auth/src/public-api.ts"
+      ]
     }
   },
   "angularCompilerOptions": {
