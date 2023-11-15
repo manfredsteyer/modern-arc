@@ -9,46 +9,7 @@
     "test": "nx test",
     "prepare": "husky install",
     "lint": "nx lint",
-    "build:flights": "wireit",
-    "build:all": "wireit",
-    "test:all": "wireit",
-    "test:flights": "wireit",
     "run:all": "node node_modules/@angular-architects/module-federation/src/server/mf-dev-server.js"
-  },
-  "wireit": {
-    "build:flights": {
-      "command": "ng build",
-      "files": [
-        "src/**",
-        "package.json",
-        "tsconfig.json",
-        "tsconfig.app.json"
-      ],
-      "output": [
-        "dist/flights/**"
-      ]
-    },
-    "build:all": {
-      "dependencies": [
-        "build:flights"
-      ]
-    },
-    "test:flights": {
-      "command": "ng test --project flights --watch false",
-      "files": [
-        "src/**",
-        "package.json",
-        "tsconfig.json",
-        "tsconfig.app.json",
-        "tsconfig.spec.json"
-      ],
-      "output": []
-    },
-    "test:all": {
-      "dependencies": [
-        "test:flights"
-      ]
-    }
   },
   "private": true,
   "dependencies": {
